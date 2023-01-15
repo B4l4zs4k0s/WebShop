@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/stylesheet.css}">
+    <meta charset="UTF-8">
+    <title>Average Stock</title>
+</head>
+<body>
+<table id="filters">
+    <tr>
+        <form action="/webShop">
+            <input type="submit" value="Home"/>
+        </form>
+    </tr>
+    <tr>
+        <form action="/only-available">
+            <input type="submit" value="Only Available"/>
+    </tr>
+    </form>
+    <tr>
+        <form action="/cheap-first">
+            <input type="submit" value="Cheapest First"/>
+        </form>
+    </tr>
+    <tr>
+        <form action="show-nike">
+            <input type="submit" value="Contains Nike"/>
+        </form>
+    </tr>
+    <tr>
+        <form action="/average-stock">
+            <input type="submit" value="Average Stock"/>
+        </form>
+    </tr>
+    <tr>
+        <form action="/most-expensive-available">
+            <input type="submit" value="Most Expensive Available"/>
+        </form>
+    </tr>
+    <tr>
+        <form action="/add-new-item">
+            <input type="submit" value="Add New Item"/>
+        </form>
+    </tr>
+</table>
+<h1 th:text="${average}"></h1>
+</body>
+</html>

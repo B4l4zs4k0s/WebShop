@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/stylesheet.css}">
+    <meta charset="UTF-8">
+    <title>Web Shop</title>
+</head>
+<body id="main page">
+<h1>Web Shop</h1>
+<table id="filters">
+    <tr>
+        <form action="/webShop">
+            <input type="submit" value="Home"/>
+        </form>
+    </tr>
+    <tr>
+        <form action="/only-available">
+            <input type="submit" value="Only Available"/>
+    </tr>
+    </form>
+    <tr>
+        <form action="/cheap-first">
+            <input type="submit" value="Cheapest First"/>
+        </form>
+    </tr>
+    <tr>
+        <form action="/show-nike">
+            <input type="submit" value="Contains Nike"/>
+        </form>
+    </tr>
+    <tr>
+        <form action="/average-stock">
+            <input type="submit" value="Average Stock"/>
+        </form>
+    </tr>
+    <tr>
+        <form action="/most-expensive-available">
+            <input type="submit" value="Most Expensive Available"/>
+        </form>
+    </tr>
+    <form action="/add-new-item">
+        <input type="submit" value="Add New Item"/>
+    </form>
+</table>
+
+<table id="web-shop-table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity of Stock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${webShop}">
+        <td th:text="${item.getName}"></td>
+        <td th:text="${item.getDescription()}"></td>
+        <td th:text="${item.getPrice()}"></td>
+        <td th:text="${item.getQuantityOfStock()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
